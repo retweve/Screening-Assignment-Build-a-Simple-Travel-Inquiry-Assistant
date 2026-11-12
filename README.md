@@ -19,8 +19,8 @@ A lightweight Python prototype that accepts raw customer travel inquiry messages
 ### 1. Clone and install dependencies
 
 ```bash
-git clone <your-repo-url>
-cd travel_inquiry_assistant
+git clone https://github.com/retweve/Screening-Assignment-Build-a-Simple-Travel-Inquiry-Assistant
+cd Screening-Assignment-Build-a-Simple-Travel-Inquiry-Assistant
 pip install -r requirements.txt
 ```
 
@@ -110,6 +110,8 @@ All 8 sample messages from the assignment are handled:
 pip install pytest
 pytest tests/ -v
 ```
+
+本机验证：Python 3.14.3 下 **36 passed**（fastapi 0.135.3 / httpx 0.28.1 / pydantic 2.12.5 / python-dotenv）。注意：`requirements.txt` 目前是下限约束、没有锁文件，安装结果可能随时间变化（依赖可复现性待补）。
 
 ---
 
