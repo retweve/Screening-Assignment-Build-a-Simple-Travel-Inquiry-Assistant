@@ -116,7 +116,7 @@ pytest tests/ -v
 ## Project Structure
 
 ```
-travel_inquiry_assistant/
+Screening-Assignment-Build-a-Simple-Travel-Inquiry-Assistant/
 ├── app.py              # FastAPI application and route definitions
 ├── parser.py           # Field extraction (AI + rule-based) and reply generation
 ├── config.py           # Environment-variable configuration
@@ -155,3 +155,9 @@ The prototype deliberately avoids over-engineering. There is no database, no aut
 - Destination extraction in rule-based mode relies on a curated list of common travel destinations. Less common locations may not be detected without the AI API.
 - The AI API is expected to return valid JSON. The system strips markdown code fences if present and falls back on parse errors.
 - No rate limiting or authentication is applied to the API endpoint (out of scope for this prototype).
+
+---
+
+## License
+
+MIT，见 [LICENSE](LICENSE)。
