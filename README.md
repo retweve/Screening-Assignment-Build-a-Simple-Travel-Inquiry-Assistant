@@ -21,7 +21,9 @@ A lightweight Python prototype that accepts raw customer travel inquiry messages
 ```bash
 git clone https://github.com/retweve/Screening-Assignment-Build-a-Simple-Travel-Inquiry-Assistant
 cd Screening-Assignment-Build-a-Simple-Travel-Inquiry-Assistant
-pip install -r requirements.txt
+pip install -r requirements.lock   # 精确版本（Python 3.14.3 下验证 36 tests passed）
+# 或者只要版本下限（较新但未锁定）：
+# pip install -r requirements.txt
 ```
 
 ### 2. Configure environment variables
@@ -107,11 +109,12 @@ All 8 sample messages from the assignment are handled:
 ## Running Tests
 
 ```bash
-pip install pytest
+pip install -r requirements.lock   # 已包含 pytest 与全部传递依赖
 pytest tests/ -v
 ```
 
-本机验证：Python 3.14.3 下 **36 passed**（fastapi 0.135.3 / httpx 0.28.1 / pydantic 2.12.5 / python-dotenv）。注意：`requirements.txt` 目前是下限约束、没有锁文件，安装结果可能随时间变化（依赖可复现性待补）。
+本机验证：Python 3.14.3 下 **36 passed**（fastapi 0.162.5 / uvicorn 0.54.0 / httpx 0.28.1 / pydantic 2.14.3 / python-dotenv 1.2.4）。
+`requirements.lock` 是从该验证环境冻结的精确版本（28 个包），`requirements.txt` 只保留下限约束；CI 用锁文件安装，保证可复现。
 
 ---
 
